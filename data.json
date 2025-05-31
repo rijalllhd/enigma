@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Enigma Streetwear",
+    "description": "Enigma Streetwear ",
+    "price": "Rp100.000",
+    "imageUrl": "design_enigma/D1/baju.png"
+  },
+  {
+    "id": 2,
+    "name": "Enigma Tagging Them Life",
+    "description": "Enigma Tagging Them Life",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 3,
+    "name": "Enigma TagIt",
+    "description": "Enigma TagIt",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 4,
+    "name": "Enigma Muralist",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 5,
+    "name": "Enigma Paint Bucket",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 6,
+    "name": "Enigma Paint",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 7,
+    "name": "Enigma Creativy is a Weapon",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 8,
+    "name": "Enigma God",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 9,
+    "name": "Enigma Bricks",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  },
+  {
+    "id": 10,
+    "name": "Enigma Skull",
+    "description": "Deskripsi Produk 2",
+    "price": "Rp200.000",
+    "imageUrl": "design_enigma/D2/baju.png"
+  }
+]

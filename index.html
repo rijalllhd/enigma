@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enigma</title>
+    <!-- Tailwind CSS -->
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        /* Optional: Hide scrollbar but keep scroll functionality */
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        *{
+          scroll-behavior: smooth;
+        }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <nav class="border-b border-gray-200 bg-white">
+      <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-2">
+        <a href="#" class="flex items-center">
+          <img src="logo/item-edit.png" class="h-12" alt="Logo" />
+          <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap">Brand</span> -->
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none md:hidden" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0">
+            <li><a href="index.html" class="block py-2 pl-3 pr-4 text-blue-700 md:p-0">Home</a></li>
+            <li><a href="#about" class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 md:p-0">About</a></li>
+            <li><a href="#contact" class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 md:p-0">Contact</a></li>
+            <li><a href="catalog.html" class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 md:p-0">Catalog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CAROUSEL -->
+    <div class="relative w-full bg-white shadow-lg rounded-lg">
+        <div class="relative">
+            <div id="carousel" class="h-auto overflow-x-hidden flex snap-x snap-mandatory scroll-smooth">
+                <div class="flex-none w-full snap-center">
+                    <img src="carousel1.jpg" alt="Slide 1" class="w-full h-96 object-cover">
+                </div>
+                <div class="flex-none w-full snap-center">
+                    <img src="carousel2.jpg" alt="Slide 2" class="w-full h-96 object-cover">
+                </div>
+                <div class="flex-none w-full snap-center">
+                    <img src="carousel3.png" alt="Slide 3" class="w-full h-96 object-cover">
+                </div>
+            </div>
+
+            <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg opacity-75 hover:opacity-100 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg opacity-75 hover:opacity-100 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <div id="dots-container" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="py-16">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-3">
+        <div class="group relative overflow-hidden">
+          <img src="model.jpg" class="h-full rounded-lg object-cover shadow-md" />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden">
+          <img src="model-2.jpg" class="h-full rounded-lg object-cover shadow-md" />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden">
+          <img src="model-1.jpg" class="h-full rounded-lg object-cover shadow-md" />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20" id="about">
+      <div class="mx-auto max-w-7xl px-4">
+        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-center lg:text-6xl dark:text-gray-900">
+          About
+          <span class="underline-offset-3 underline decoration-blue-400 decoration-8 dark:decoration-blue-600">Us</span>
+        </h1>
+        <p class="text-lg font-normal text-gray-500 lg:text-center lg:text-xl dark:text-gray-400">Kami adalah brand streetwear yang lahir dari semangat kebebasan berekspresi dan gaya hidup urban. Terinspirasi dari jalanan, musik, dan budaya anak muda, setiap koleksi kami dirancang untuk mencerminkan sikap berani, orisinal, dan autentik. Lebih dari sekadar pakaian, kami membawa pesan dan identitas.</p>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="mb-12 text-center text-3xl font-bold">Product Overview</h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div class="overflow-hidden rounded-lg border">
+            <img src="design_enigma/D1/baju.png" alt="Product" class="h-64 w-full object-cover" />
+            <div class="p-4">
+              <h3 class="text-center text-lg font-semibold">Enigma Streetwear</h3>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-lg border">
+            <img src="design_enigma/D2/baju.png" alt="Product" class="h-64 w-full object-cover" />
+            <div class="p-4">
+              <h3 class="text-center text-lg font-semibold">Enigma Tagging Them Life</h3>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-lg border">
+            <img src="design_enigma/D3/baju.png" alt="Product" class="h-64 w-full object-cover" />
+            <div class="p-4">
+              <h3 class="text-center text-lg font-semibold">Enigma TagIt</h3>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-lg border">
+            <img src="design_enigma/D4/baju.png" alt="Product" class="h-64 w-full object-cover" />
+            <div class="p-4">
+              <h3 class="text-center text-lg font-semibold">Enigma Muralist</h3>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a href="catalog.html" class="rounded bg-blue-600 px-6 py-3 text-white hover:bg-blue-700">Load More</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900" id="contact">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 text-center md:mb-0 md:text-left">
+            <a href="#" class="mb-1 flex items-center justify-center md:mb-6 md:justify-start">
+              <img src="logo/putih.png" class="me-3 h-20" alt="logo" />
+            </a>
+            <a href="https://maps.app.goo.gl/m7UCaDPswngRPZpv8" class="text-xs font-medium text-gray-400 hover:underline lg:text-base" target="_blank">
+              Pesona Kahuripan
+              <br />
+              No. 55 Jl. Transyogi Km 6, Klapanunggal
+              <br />
+              Bogor - jawa Barat
+            </a>
+          </div>
+          <div class="grid grid-cols-1 place-content-center gap-8 text-center sm:grid-cols-3 sm:gap-6 lg:text-left">
+            <div class="mx-auto">
+              <h2 class="text-sm font-semibold uppercase text-white lg:mb-6">Contact</h2>
+              <ul class="text-xs font-medium text-gray-400 lg:text-base">
+                <li class="">
+                  <a href="mailto:enigma.brand@gmail.com" class="hover:underline">enigma.brand@gmail.com</a>
+                </li>
+                <li>
+                  <a href="tel:08985500689" class="hover:underline">0898-5500-569</a>
+                </li>
+                <li>
+                  <a href="tel:081213500700" class="hover:underline">0812-1350-0700</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mx-auto">
+              <h2 class="text-sm font-semibold uppercase text-white lg:mb-6">Company</h2>
+              <ul class="text-xs font-medium text-gray-400 lg:text-base">
+                <li class="">
+                  <a href="#" class="hover:underline">About us</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Our team</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Events</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Our program</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Help &amp; support</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mx-auto">
+              <h2 class="text-sm font-semibold uppercase text-white lg:mb-6">Connect with us</h2>
+              <ul class="mt-2 font-medium text-gray-400 lg:mt-0">
+                <li class="flex justify-center lg:justify-start">
+                  <span class="fill-white">
+                    <a href="mailto:marketing.sevta@gmail.com">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                      </svg>
+                    </a>
+                  </span>
+
+                  <span class="fill-white">
+                    <a href="https://www.instagram.com/sevtaenergi/">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                        />
+                      </svg>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+
+        <span class="mx-auto text-center text-sm text-gray-400">
+          © 2025
+          <a href="#" class="hover:underline">Enigma</a>
+          . All Rights Reserved.
+        </span>
+      </div>
+    </footer>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const carousel = document.getElementById('carousel');
+          const prevBtn = document.getElementById('prevBtn');
+          const nextBtn = document.getElementById('nextBtn');
+          const dotsContainer = document.getElementById('dots-container');
+          const slides = carousel.children; // Get all slide elements
+          let currentIndex = 0;
+
+          // Function to update carousel position
+          const updateCarousel = () => {
+              const slideWidth = carousel.clientWidth; // Get visible width of the carousel
+              carousel.scrollLeft = currentIndex * slideWidth; // Scroll to the current slide
+              updateDots();
+          };
+
+          // Function to create and update dots
+          const createDots = () => {
+              dotsContainer.innerHTML = ''; // Clear existing dots
+              for (let i = 0; i < slides.length; i++) {
+                  const dot = document.createElement('button');
+                  dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-400', 'hover:bg-gray-600', 'focus:outline-none');
+                  dot.dataset.index = i; // Store index for navigation
+                  dot.addEventListener('click', () => {
+                      currentIndex = i;
+                      updateCarousel();
+                  });
+                  dotsContainer.appendChild(dot);
+              }
+          };
+
+          const updateDots = () => {
+              const currentDots = dotsContainer.children;
+              Array.from(currentDots).forEach((dot, index) => {
+                  if (index === currentIndex) {
+                      dot.classList.add('bg-white'); // Active dot color
+                      dot.classList.remove('bg-gray-400');
+                  } else {
+                      dot.classList.remove('bg-white');
+                      dot.classList.add('bg-gray-400');
+                  }
+              });
+          };
+
+          // Event Listeners for Navigation Buttons
+          prevBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1; // Loop back to last
+              updateCarousel();
+          });
+
+          nextBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0; // Loop back to first
+              updateCarousel();
+          });
+
+          // Initialize carousel on load
+          createDots(); // Create dots when the page loads
+          updateCarousel(); // Set initial slide and dot
+          // autoSlide(); // Uncomment this line to enable auto-slide
+      });
+    </script>
+
+
+  </body>
+</html>

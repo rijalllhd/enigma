@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enigma</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite -->
+    <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.js"></script>
+    <link href="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <nav class="border-b border-gray-200 bg-white">
+      <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-2">
+        <a href="#" class="flex items-center">
+          <img src="logo/item-edit.png" class="h-12" alt="Logo" />
+          <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap">Brand</span> -->
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none md:hidden" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0">
+            <li><a href="index.html" class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 md:p-0">Home</a></li>
+            <li><a href="#" class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 md:p-0">About</a></li>
+            <li><a href="#" class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 md:p-0">Contact</a></li>
+            <li><a href="catalog.html" class="block py-2 pl-3 pr-4 text-blue-700 hover:text-blue-700 md:p-0">Catalog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mx-auto max-w-7xl px-4 py-10">
+      <div class="flex justify-between p-6 flex-col gap-6 md:flex-row">
+        <h2 class="mb-4 text-4xl font-semibold">KATALOG</h2>
+        <div class="mb-6 items-end space-x-2">
+            <input type="text" id="search-input" placeholder="Cari produk..."
+                    class="flex-1 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:ring focus:ring-blue-200">
+            <button id="search-button"
+                    class="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-200">
+                Cari
+            </button>
+        </div>
+      </div>
+      <!-- product -->
+      <div class="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 lg:grid-cols-4" id="products-container">
+       
+      </div>
+    </div>
+
+    <footer class="bg-gray-900">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 text-center md:mb-0 md:text-left">
+            <a href="#" class="mb-1 flex items-center justify-center md:mb-6 md:justify-start">
+              <img src="logo/putih.png" class="me-3 h-20" alt="logo" />
+            </a>
+            <a href="https://maps.app.goo.gl/m7UCaDPswngRPZpv8" class="text-xs font-medium text-gray-400 hover:underline lg:text-base" target="_blank">
+              Pesona Kahuripan
+              <br />
+              No. 55 Jl. Transyogi Km 6, Klapanunggal
+              <br />
+              Bogor - jawa Barat
+            </a>
+          </div>
+          <div class="grid grid-cols-1 place-content-center gap-8 text-center sm:grid-cols-3 sm:gap-6 lg:text-left">
+            <div class="mx-auto">
+              <h2 class="text-sm font-semibold uppercase text-white lg:mb-6">Contact</h2>
+              <ul class="text-xs font-medium text-gray-400 lg:text-base">
+                <li class="">
+                  <a href="mailto:enigma.brand@gmail.com" class="hover:underline">enigma.brand@gmail.com</a>
+                </li>
+                <li>
+                  <a href="tel:08985500689" class="hover:underline">0898-5500-569</a>
+                </li>
+                <li>
+                  <a href="tel:081213500700" class="hover:underline">0812-1350-0700</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mx-auto">
+              <h2 class="text-sm font-semibold uppercase text-white lg:mb-6">Company</h2>
+              <ul class="text-xs font-medium text-gray-400 lg:text-base">
+                <li class="">
+                  <a href="#" class="hover:underline">About us</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Our team</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Events</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Our program</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Help &amp; support</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mx-auto">
+              <h2 class="text-sm font-semibold uppercase text-white lg:mb-6">Connect with us</h2>
+              <ul class="mt-2 font-medium text-gray-400 lg:mt-0">
+                <li class="flex justify-center lg:justify-start">
+                  <span class="fill-white">
+                    <a href="mailto:marketing.sevta@gmail.com">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                      </svg>
+                    </a>
+                  </span>
+
+                  <span class="fill-white">
+                    <a href="https://www.instagram.com/sevtaenergi/">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                        />
+                      </svg>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+
+        <span class="mx-auto text-center text-sm text-gray-400">
+          © 2024
+          <a href="#" class="hover:underline">Enigma</a>
+          . All Rights Reserved.
+        </span>
+      </div>
+    </footer>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const productsContainer = document.getElementById('products-container');
+          const searchInput = document.getElementById('search-input'); // Elemen input search
+          const searchButton = document.getElementById('search-button'); // Elemen tombol search
+          const whatsappNumber = '628985500689'; // Ganti dengan nomor WhatsApp Anda
+
+          let allProducts = []; // Variabel untuk menyimpan semua data produk yang diambil
+
+          // Fungsi untuk membuat elemen produk
+          function createProductCard(product) {
+              const productCard = document.createElement('div');
+              productCard.classList.add('rounded-lg', 'bg-white', 'p-4', 'shadow');
+
+              const img = document.createElement('img');
+              img.src = product.imageUrl;
+              img.alt = product.name;
+              img.classList.add('mb-2', 'w-full');
+              productCard.appendChild(img);
+
+              const productName = document.createElement('h3');
+              productName.classList.add('font-semibold');
+              productName.textContent = product.name;
+              productCard.appendChild(productName);
+
+              const productDescription = document.createElement('p');
+              productDescription.classList.add('text-sm', 'text-gray-500');
+              productDescription.textContent = product.description;
+              productCard.appendChild(productDescription);
+
+              const productPrice = document.createElement('p');
+              productPrice.classList.add('mt-1', 'text-lg', 'font-bold');
+              productPrice.textContent = product.price;
+              productCard.appendChild(productPrice);
+
+              const whatsappLink = document.createElement('a');
+              const encodedProductName = encodeURIComponent(product.name);
+              whatsappLink.href = `https://wa.me/${whatsappNumber}?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Anda.%20Barang%20yang%20saya%20inginkan%20adalah%3A%20${encodedProductName}`;
+              whatsappLink.target = "_blank";
+
+              const orderButton = document.createElement('button');
+              orderButton.classList.add('mt-2', 'w-full', 'rounded', 'bg-blue-600', 'py-1', 'text-white', 'hover:bg-blue-700');
+              orderButton.textContent = 'Pesan';
+              whatsappLink.appendChild(orderButton);
+
+              productCard.appendChild(whatsappLink);
+
+              return productCard;
+          }
+
+          // Fungsi untuk merender/menampilkan produk ke DOM
+          function renderProducts(productsToRender) {
+              productsContainer.innerHTML = ''; // Hapus semua produk yang ada
+              if (productsToRender.length === 0) {
+                  productsContainer.innerHTML = '<p class="col-span-full text-center text-gray-600">Tidak ada produk yang ditemukan.</p>';
+                  return;
+              }
+              productsToRender.forEach(product => {
+                  const productCard = createProductCard(product);
+                  productsContainer.appendChild(productCard);
+              });
+          }
+
+          // Mengambil data produk dari file JSON saat halaman dimuat
+          fetch('data.json') // Pastikan path ke file JSON benar
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  return response.json();
+              })
+              .then(products => {
+                  allProducts = products; // Simpan semua produk
+                  renderProducts(allProducts); // Tampilkan semua produk di awal
+              })
+              .catch(error => {
+                  console.error('Ada masalah saat mengambil atau memproses data produk:', error);
+                  productsContainer.innerHTML = '<p class="col-span-full text-center" style="color: red;">Gagal memuat produk. Silakan coba lagi nanti.</p>';
+              });
+
+          // Event Listener untuk tombol pencarian
+          searchButton.addEventListener('click', () => {
+              const searchTerm = searchInput.value.toLowerCase().trim(); // Ambil input, ubah ke lowercase, dan hapus spasi di awal/akhir
+              if (searchTerm === '') {
+                  renderProducts(allProducts); // Jika input kosong, tampilkan semua produk
+                  return;
+              }
+
+              const filteredProducts = allProducts.filter(product =>
+                  product.name.toLowerCase().includes(searchTerm) ||
+                  product.description.toLowerCase().includes(searchTerm)
+              );
+              renderProducts(filteredProducts); // Tampilkan produk yang difilter
+          });
+
+          // Opsional: Menambahkan pencarian saat menekan Enter di input
+          searchInput.addEventListener('keypress', (e) => {
+              if (e.key === 'Enter') {
+                  searchButton.click(); // Simulasikan klik tombol search
+              }
+          });
+        });
+    </script>
+  </body>
+</html>

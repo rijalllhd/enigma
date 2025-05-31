@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="bg-slate-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar" class="fixed inset-y-0 left-0 z-30 w-64 -translate-x-full transform flex-col bg-blue-600 p-4 text-white transition-transform duration-200 ease-in-out md:relative md:flex md:w-[20rem] md:translate-x-0">
+        <div class="mb-1 p-4">
+          <img class="w-auto" src="logo/putih.png" alt="" />
+        </div>
+        <nav class="flex flex-col gap-1 font-sans text-base font-normal">
+          <!-- Tombol Home -->
+          <div onclick="loadHome()" role="button" class="flex cursor-pointer items-center rounded-lg p-3 transition-all hover:bg-blue-100 hover:text-blue-900">
+            <div class="mr-4 grid place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5">
+                <path d="M10.707 1.293a1 1 0 011.414 0l9 9a1 1 0 01-1.414 1.414L20 11.414V20a1 1 0 01-1 1h-5a1 1 0 01-1-1v-4H11v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-8.586l-.707.707a1 1 0 01-1.414-1.414l9-9z"/>
+              </svg>
+            </div>
+            Home
+          </div>
+
+          <!-- Tombol Tambah Produk -->
+          <div onclick="loadForm()" role="button" class="flex cursor-pointer items-center rounded-lg p-3 transition-all hover:bg-blue-100 hover:text-blue-900">
+            <div class="mr-4 grid place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                <path fill-rule="evenodd" d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.04 16.5l.5-1.5h6.42l.5 1.5H8.29zm7.46-12a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6zm-3 2.25a.75.75 0 00-1.5 0v3.75a.75.75 0 001.5 0V9zm-3 2.25a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0v-1.5z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            Tambah Product
+          </div>
+
+          <!-- Tombol Logout -->
+          <div role="button" class="flex cursor-pointer items-center rounded-lg p-3 transition-all hover:bg-blue-100 hover:text-blue-900">
+            <div class="mr-4 grid place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v9a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM6.166 5.106a.75.75 0 010 1.06 8.25 8.25 0 1011.668 0 .75.75 0 111.06-1.06c3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788a.75.75 0 011.06 0z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            Log Out
+          </div>
+        </nav>
+
+      </div>
+
+      <!-- Content Area -->
+      <div class="flex flex-1 flex-col">
+        <!-- Mobile Topbar -->
+        <div class="flex items-center justify-between bg-blue-600 p-4 text-white md:hidden">
+          <span class="font-bold">Dashboard</span>
+          <button onclick="toggleSidebar()" class="focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content" id="content">
+          <div class="flex items-center justify-center h-full">
+            <img src="logo/item.png" alt="Logo Default" class="w-64 opacity-50" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function loadHome() {
+        document.getElementById("content").innerHTML = `
+          <div class="flex items-center justify-center h-full">
+            <img src="logo/item.png" alt="Home Logo" class="w-64 opacity-50" />
+          </div>
+        `;
+      }
+
+      function loadForm() {
+        fetch("form.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content").innerHTML = data;
+          })
+          .catch((error) => {
+            document.getElementById("content").innerHTML = "Gagal memuat form.";
+            console.error("Error:", error);
+          });
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("-translate-x-full");
+      }
+    </script>
+  </body>
+</html>
