@@ -18,55 +18,55 @@
     "name": "Enigma TagIt",
     "description": "Produk Enigma TagIt, tampil berani dengan motif tag unik.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D3/baju.png"
   },
   {
     "id": 4,
     "name": "Enigma Muralist",
     "description": "Inspirasi dari seni mural, desain Enigma Muralist yang artistik.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D4/baju.png"
   },
   {
     "id": 5,
     "name": "Enigma Paint Bucket",
     "description": "Desain Enigma Paint Bucket, menunjukkan kecintaan pada seni dan warna.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D5/baju.png"
   },
   {
     "id": 6,
     "name": "Enigma Paint",
     "description": "Koleksi Enigma Paint, dengan sentuhan warna yang berani dan ekspresif.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D6/baju.png"
   },
   {
     "id": 7,
     "name": "Enigma Creativy is a Weapon",
     "description": "Desain Enigma 'Creativity is a Weapon', pesan kuat tentang kekuatan kreativitas.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D7/baju.png"
   },
   {
     "id": 8,
     "name": "Enigma God",
     "description": "Desain Enigma 'God', pernyataan gaya yang unik dan penuh makna.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D8/baju.png"
   },
   {
     "id": 9,
     "name": "Enigma Bricks",
     "description": "Produk Enigma Bricks, terinspirasi dari tekstur dan pola batu bata.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D9/baju.png"
   },
   {
     "id": 10,
     "name": "Enigma Skull",
     "description": "Desain Enigma Skull, gaya edgy dengan motif tengkorak yang ikonik.",
     "price": "Rp200.000",
-    "imageUrl": "design_enigma/D2/baju.png"
+    "imageUrl": "design_enigma/D10/baju.png"
   }
 ]
