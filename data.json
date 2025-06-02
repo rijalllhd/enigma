@@ -2,70 +2,70 @@
   {
     "id": 1,
     "name": "Enigma Streetwear",
-    "description": "Enigma Streetwear ",
+    "description": "Desain khas Enigma Streetwear, gaya urban yang otentik.",
     "price": "Rp100.000",
     "imageUrl": "design_enigma/D1/baju.png"
   },
   {
     "id": 2,
     "name": "Enigma Tagging Them Life",
-    "description": "Enigma Tagging Them Life",
+    "description": "Desain Enigma Tagging Them Life, ekspresi gaya hidup dengan sentuhan graffiti.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 3,
     "name": "Enigma TagIt",
-    "description": "Enigma TagIt",
+    "description": "Produk Enigma TagIt, tampil berani dengan motif tag unik.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 4,
     "name": "Enigma Muralist",
-    "description": "Deskripsi Produk 2",
+    "description": "Inspirasi dari seni mural, desain Enigma Muralist yang artistik.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 5,
     "name": "Enigma Paint Bucket",
-    "description": "Deskripsi Produk 2",
+    "description": "Desain Enigma Paint Bucket, menunjukkan kecintaan pada seni dan warna.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 6,
     "name": "Enigma Paint",
-    "description": "Deskripsi Produk 2",
+    "description": "Koleksi Enigma Paint, dengan sentuhan warna yang berani dan ekspresif.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 7,
     "name": "Enigma Creativy is a Weapon",
-    "description": "Deskripsi Produk 2",
+    "description": "Desain Enigma 'Creativity is a Weapon', pesan kuat tentang kekuatan kreativitas.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 8,
     "name": "Enigma God",
-    "description": "Deskripsi Produk 2",
+    "description": "Desain Enigma 'God', pernyataan gaya yang unik dan penuh makna.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 9,
     "name": "Enigma Bricks",
-    "description": "Deskripsi Produk 2",
+    "description": "Produk Enigma Bricks, terinspirasi dari tekstur dan pola batu bata.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   },
   {
     "id": 10,
     "name": "Enigma Skull",
-    "description": "Deskripsi Produk 2",
+    "description": "Desain Enigma Skull, gaya edgy dengan motif tengkorak yang ikonik.",
     "price": "Rp200.000",
     "imageUrl": "design_enigma/D2/baju.png"
   }
