@@ -24,12 +24,55 @@
   </head>
 
   <body class="bg-white text-gray-800">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. Dapatkan referensi ke elemen-elemen DOM yang dibutuhkan
+        const menuToggleButton = document.querySelector('[data-collapse-toggle="navbar-default"]');
+        const menuDiv = document.getElementById('navbar-default');
+        const navLinks = menuDiv.querySelectorAll('a'); // Opsional: Untuk menutup menu saat link diklik
+
+        // 2. Tambahkan event listener ke tombol toggle (hamburger icon)
+        // Pastikan kedua elemen ditemukan sebelum menambahkan event listener
+        if (menuToggleButton && menuDiv) {
+            menuToggleButton.addEventListener('click', () => {
+                // Mengambil status `aria-expanded` saat ini untuk aksesibilitas
+                const isExpanded = menuToggleButton.getAttribute('aria-expanded') === 'true';
+
+                // Mengubah status `aria-expanded` (true menjadi false, dan sebaliknya)
+                menuToggleButton.setAttribute('aria-expanded', !isExpanded);
+
+                // Toggle kelas 'hidden' pada div menu:
+                // - Jika 'hidden' ada, hapus (menu muncul)
+                // - Jika 'hidden' tidak ada, tambahkan (menu sembunyi)
+                menuDiv.classList.toggle('hidden');
+            });
+        }
+
+        // 3. Opsional: Tambahkan event listener ke setiap link navigasi
+        // Agar menu tertutup secara otomatis setelah salah satu link di dalamnya diklik
+        // Ini sangat berguna untuk pengalaman pengguna yang lebih baik, terutama jika Anda memiliki
+        // link yang mengarah ke bagian yang sama di halaman (misalnya #about, #contact).
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Periksa apakah menu sedang terbuka (tidak memiliki kelas 'hidden')
+                if (!menuDiv.classList.contains('hidden')) {
+                    // Jika terbuka, sembunyikan menu
+                    menuDiv.classList.add('hidden');
+                    // Perbarui status `aria-expanded` menjadi false
+                    menuToggleButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    });
+    </script>
+
+
     <!-- Header -->
     <nav class="border-b border-gray-200 bg-white">
       <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-2">
         <a href="#" class="flex items-center">
           <img src="logo/item-edit.png" class="h-12" alt="Logo" />
-          <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap">Brand</span> -->
         </a>
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none md:hidden" aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -53,13 +96,13 @@
         <div class="relative">
             <div id="carousel" class="h-auto overflow-x-hidden flex snap-x snap-mandatory scroll-smooth">
                 <div class="flex-none w-full snap-center">
-                    <img src="carousel1.jpg" alt="Slide 1" class="w-full h-96 object-cover">
+                    <img src="carousel1.jpg" alt="Slide 1" class="w-full h-32 lg:h-96 object-cover">
                 </div>
                 <div class="flex-none w-full snap-center">
-                    <img src="carousel2.jpg" alt="Slide 2" class="w-full h-96 object-cover">
+                    <img src="carousel2.jpg" alt="Slide 2" class="w-full h-32 lg:h-96 object-cover">
                 </div>
                 <div class="flex-none w-full snap-center">
-                    <img src="carousel3.png" alt="Slide 3" class="w-full h-96 object-cover">
+                    <img src="carousel3.png" alt="Slide 3" class="w-full h-32 lg:h-96 object-cover">
                 </div>
             </div>
 
@@ -79,31 +122,8 @@
         </div>
     </div>
 
-    <!-- Banner Section -->
-    <section class="py-16">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-3">
-        <div class="group relative overflow-hidden">
-          <img src="model.jpg" class="h-full rounded-lg object-cover shadow-md" />
-          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
-          </div>
-        </div>
-
-        <div class="group relative overflow-hidden">
-          <img src="model-2.jpg" class="h-full rounded-lg object-cover shadow-md" />
-          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
-          </div>
-        </div>
-
-        <div class="group relative overflow-hidden">
-          <img src="model-1.jpg" class="h-full rounded-lg object-cover shadow-md" />
-          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white lg:py-20" id="about">
-      <div class="mx-auto max-w-7xl px-4">
+    <section class="bg-white lg:py-20 py-12" id="about">
+      <div class="mx-auto max-w-7xl px-8">
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl text-center lg:text-6xl dark:text-gray-900">
           About
           <span class="underline-offset-3 underline decoration-blue-400 decoration-8 dark:decoration-blue-600">Us</span>
@@ -112,9 +132,60 @@
       </div>
     </section>
 
+    <!-- Banner Section -->
+    <section class="pb-16">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 lg:gap-8 gap-4 px-8 md:grid-cols-3">
+        <div class="group relative overflow-hidden">
+          <img src="model.jpg" class="lg:h-full h-52 w-full rounded-lg object-cover shadow-md" />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden">
+          <img src="model-2.jpg" class="lg:h-full h-52 w-full rounded-lg object-cover shadow-md" />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden">
+          <img src="model-1.jpg" class="lg:h-full h-52 w-full rounded-lg object-cover shadow-md" />
+          <div class="absolute inset-0 flex flex-col justify-end bg-gray-600 bg-opacity-50 p-6 opacity-0 transition duration-300 group-hover:opacity-50">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="bg-neutral-600 lg:py-20" id="why">
+      <div class="mx-auto max-w-7xl px-8 py-12">
+        <h1 class="mb-6 text-4xl font-extrabold leading-none tracking-tight text-slate-100 md:text-5xl text-center lg:text-6xl dark:text-slate-100">
+          Why Choose Us
+        </h1>
+
+        <div class="lg:mt-20 grid md:grid-cols-2 gap-8 lg:gap-12 text-center lg:text-left">
+          <div class="bg-neutral-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-slate-100 mb-3">Desain Orisinal</h3>
+            <p class="text-slate-200">Setiap koleksi kami menampilkan desain unik yang tidak hanya mengikuti tren, tetapi juga menciptakan gaya yang berani dan berkarakter.</p>
+          </div>
+          <div class="bg-neutral-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-slate-100 mb-3">Kualitas Premium</h3>
+            <p class="text-slate-200">Kami hanya menggunakan material pilihan dan teknik produksi terbaik untuk menghasilkan pakaian streetwear yang nyaman dipakai dan awet.</p>
+          </div>
+          <div class="bg-neutral-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-slate-100 mb-3">Detail</h3>
+            <p class="text-slate-200">Dari jahitan hingga sentuhan akhir, setiap detail pada produk kami dirancang dengan cermat untuk memberikan kualitas dan estetika terbaik.</p>
+          </div>
+          <div class="bg-neutral-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-slate-100 mb-3">Stand Out</h3>
+            <p class="text-slate-200">Kami menawarkan pilihan desain yang tidak pasaran, memungkinkan Anda untuk tampil beda dan menonjol dari keramaian.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Product Grid -->
     <section class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4">
+      <div class="mx-auto max-w-7xl px-8">
         <h2 class="mb-12 text-center text-3xl font-bold">Product Overview</h2>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div class="overflow-hidden rounded-lg border">
@@ -147,9 +218,73 @@
         </div>
         <div class="mt-12 text-center">
           <a href="catalog.html" class="rounded bg-blue-600 px-6 py-3 text-white hover:bg-blue-700">Load More</a>
+          <a href="https://id.shp.ee/AsjmKXC" class="rounded bg-orange-600 px-6 py-3 text-white hover:bg-orange-700">Shopee</a>
         </div>
       </div>
     </section>
+
+
+    <section class="bg-slate-50 lg:py-20 p-12" id="testi">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold tracking-tight text-neutral-800 sm:text-4xl">
+            Testimoni
+          </h2>
+        </div>
+
+        <div class="lg:mt-16 mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img class="h-12 w-12 rounded-full object-cover" src="profile.svg" alt="Avatar Pelanggan 1">
+                <div class="ml-4">
+                  <div class="text-sm font-semibold text-neutral-800">Andi Pratama</div>
+                </div>
+              </div>
+              <blockquote>
+                <p class="text-base text-neutral-700">
+                  "Desainnya benar-benar original dan beda dari yang lain. Kualitas bahannya juga premium, nyaman banget dipakai seharian. Pengiriman cepat dan pelayanannya ramah. Recommended!"
+                </p>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img class="h-12 w-12 rounded-full object-cover" src="profile.svg" alt="Avatar Pelanggan 2">
+                <div class="ml-4">
+                  <div class="text-sm font-semibold text-neutral-800">Lutfi Andrian</div>
+                </div>
+              </div>
+              <blockquote>
+                <p class="text-base text-neutral-700">
+                  "Suka banget sama detail jahitannya yang rapi dan sentuhan akhirnya. Kelihatan kalau produk ini dibuat dengan cermat. Harganya juga sepadan dengan kualitas yang didapat. Pasti beli lagi!"
+                </p>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img class="h-12 w-12 rounded-full object-cover" src="profile.svg" alt="Avatar Pelanggan 3">
+                <div class="ml-4">
+                  <div class="text-sm font-semibold text-neutral-800">Budi Santoso</div>
+                </div>
+              </div>
+              <blockquote>
+                <p class="text-base text-neutral-700">
+                  "Akhirnya nemu brand streetwear lokal yang kualitasnya gak main-main. Desainnya unik, bikin tampil beda dan percaya diri. Bakal jadi langganan tetap nih. Maju terus!"
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 
     <footer class="bg-gray-900" id="contact">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -208,18 +343,16 @@
               <ul class="mt-2 font-medium text-gray-400 lg:mt-0">
                 <li class="flex justify-center lg:justify-start">
                   <span class="fill-white">
-                    <a href="mailto:marketing.sevta@gmail.com">
+                    <a href="mailto:#@gmail.com">
                       <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512">
-                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                         <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
                       </svg>
                     </a>
                   </span>
 
                   <span class="fill-white">
-                    <a href="https://www.instagram.com/sevtaenergi/">
+                    <a href="https://www.instagram.com/#/">
                       <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 448 512">
-                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                         <path
                           d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                         />
@@ -288,19 +421,18 @@
 
           // Event Listeners for Navigation Buttons
           prevBtn.addEventListener('click', () => {
-              currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1; // Loop back to last
+              currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1; 
               updateCarousel();
           });
 
           nextBtn.addEventListener('click', () => {
-              currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0; // Loop back to first
+              currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0; 
               updateCarousel();
           });
 
           // Initialize carousel on load
           createDots(); // Create dots when the page loads
           updateCarousel(); // Set initial slide and dot
-          // autoSlide(); // Uncomment this line to enable auto-slide
       });
     </script>
 
